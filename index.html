@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marta Martins | Creative Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Reset & Base ===== */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+  font-family:'Inter', sans-serif; 
+  line-height:1.6; 
+  color:#1a1a1a; 
+  background:#fafafa;
+  font-weight:400;
+  overflow-x: hidden;
+}
+a {text-decoration:none; color:inherit;}
+section {padding:100px 0;}
+h1,h2,h3 {font-family:'Space Grotesk', sans-serif;}
+.container {max-width:1200px; margin:0 auto; padding:0 24px;}
+button {cursor:pointer; border:none; font-family:inherit;}
+
+/* ===== Colors & Variables ===== */
+:root {
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --secondary: #f1f5f9;
+  --accent: #06b6d4;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --white: #ffffff;
+  --border: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* ===== Navigation ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a:hover {
+  color: var(--primary);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background: var(--primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== Hero ===== */
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+#hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero-description {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--white);
+  color: var(--primary);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ===== Sections ===== */
+section {scroll-margin-top: 80px;}
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+.section-header p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== About ===== */
+#about {
+  background: var(--white);
+}
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
+}
+.about-text h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+.about-text p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  text-align: justify;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+.stat {
+  text-align: center;
+  padding: 24px;
+  background: var(--secondary);
+  border-radius: 12px;
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+}
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ===== Portfolio Grid ===== */
+.portfolio-section {
+  background: var(--white);
+  margin-bottom: 60px;
+}
+.portfolio-section:nth-child(odd) {
+  background: var(--secondary);
+}
+.portfolio-section h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--text-primary);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+}
+.project {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--border);
+}
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+.project-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.project img, .project video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.project:hover img, .project:hover video {
+  transform: scale(1.05);
+}
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(37, 99, 235, 0.2); /* Soft blue overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.project:hover .project-overlay {
+  opacity: 1;
+}
+.project-content {
+  padding: 24px;
+}
+.project-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  text-align: center;
+}
+.project-content p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* ===== Skills ===== */
+#skills {
+  background: var(--white);
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+.skill-card {
+  background: var(--white);
+  padding: 40px 32px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: 20px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--white);
+}
+.skill-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+.skill-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== Contact ===== */
+#contact {
+  background: var(--secondary);
+}
+.contact-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--white);
+  color: var(--text-primary);
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+.contact-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modal-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-track img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel-modal .carousel-track {
+  height: 100%;
+}
+
+.carousel-modal .carousel-track img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.carousel-indicator.active {
+  background: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-content, .modal-video {
+    width: 95%;
+  }
+  .carousel-modal {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  section {
+    padding: 60px 0;
+  }
+  #hero h1 {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+  }
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+  .modal-content, .modal-video {
+    width: 95%;
+  }
+  .carousel-modal {
+    width: 95%;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">Marta Martins</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-content">
+    <h1>Marta Martins</h1>
+    <p class="hero-subtitle">Creative Designer & Engineer</p>
+    <p class="hero-description">
+      Transforming ideas into compelling visual narratives through innovative design, 
+      branding, and digital experiences that resonate and inspire.
+    </p>
+    <button class="cta-button" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
+      <span>Explore My Work</span>
+      <span>↓</span>
+    </button>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <h2>About Me</h2>
+      <p>Passionate about merging technology and creativity</p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I'm a student of Informatics and Computing Engineering at FEUP with an unwavering passion for creativity. 
+          My journey seamlessly blends technical expertise with artistic vision, creating unique solutions that bridge 
+          the gap between functionality and beauty.
+        </p>
+        <p>
+          From wedding stationery to promotional videos, from mobile app mockups to social media campaigns, 
+          I specialize in transforming concepts into compelling visual stories that celebrate life's moments 
+          and connect with audiences on a deeper level.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-header">
+      <h2>Portfolio</h2>
+      <p>A showcase of my creative and engineering projects</p>
+    </div>
+
+    <!-- Engineering Projects -->
+    <section class="portfolio-section">
+      <h3>Engineering Projects</h3>
+      <div class="grid">
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/engineering/engineering (1).jpeg" alt="Summer Internship MockUp">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Summer Internship MockUp</h3>
+            <p>Figma</p>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/engineering/engineering (2).jpeg" alt="Summer Internship MockUp">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Summer Internship MockUp</h3>
+            <p>Figma</p>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/engineering/engineering (3).png" alt="Database & Web Applications Lab">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Database & Web Applications Lab</h3>
+            <p>Canva MockUp</p>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/engineering/engineering (4).png" alt="Database & Web Applications Lab">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Database & Web Applications Lab</h3>
+            <p>Canva MockUp</p>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/engineering/engineering (5).png" alt="Software Engineering Mobile App">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Software Engineering Mobile App</h3>
+            <p>Canva MockUp</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wedding Stationery -->
+    <section class="portfolio-section">
+      <h3>Wedding Stationery</h3>
+      <div class="grid">
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/wedding/wedding (4).png" alt="Invitation Front">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Invitation Front</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/wedding/wedding (5).png" alt="Invitation Back">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Invitation Back</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <div class="carousel">
+              <div class="carousel-track">
+                <img src="../portfolio/wedding/wedding (11).jpeg" alt="Church Celebration">
+                <img src="../portfolio/wedding/wedding (9).png" alt="Church Celebration">
+                <img src="../portfolio/wedding/wedding (10).png" alt="Church Celebration">
+              </div>
+              <button class="carousel-btn prev">&#10094;</button>
+              <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Church Celebration</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <div class="carousel">
+              <div class="carousel-track">
+                <img src="../portfolio/wedding/wedding (12).jpeg" alt="Find your Seat">
+                <img src="../portfolio/wedding/wedding (6).png" alt="Find your Seat">
+              </div>
+              <button class="carousel-btn prev">&#10094;</button>
+              <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Find your Seat</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <div class="carousel">
+              <div class="carousel-track">
+                <img src="../portfolio/wedding/wedding (14).jpeg" alt="Wedding Favor">
+                <img src="../portfolio/wedding/wedding (15).jpeg" alt="Wedding Favor">
+                <img src="../portfolio/wedding/wedding (1).png" alt="Wedding Favor">
+              </div>
+              <button class="carousel-btn prev">&#10094;</button>
+              <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Wedding Favor</h3>
+          </div>
+        </div>
+         <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <div class="carousel">
+              <div class="carousel-track">
+                <img src="../portfolio/wedding/wedding (16).jpeg" alt="Wedding Favor Sticker">
+                <img src="../portfolio/wedding/wedding (2).png" alt="Wedding Favor Sticker">
+              </div>
+              <button class="carousel-btn prev">&#10094;</button>
+              <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Wedding Favor Sticker</h3>
+          </div>
+        </div>
+       <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <div class="carousel">
+              <div class="carousel-track">
+                <img src="../portfolio/wedding/wedding (17).jpeg" alt="Toss Flowers Sticker">
+                <img src="../portfolio/wedding/wedding (3).png" alt="Toss Flowers Sticker">
+              </div>
+              <button class="carousel-btn prev">&#10094;</button>
+              <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Toss Flowers Sticker</h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bachelorette -->
+    <section class="portfolio-section">
+      <h3>Bachelorette</h3>
+      <div class="grid">
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/bachelorette/bachelorette (2).png" alt="Bachelorette Photo 1">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Photo 1</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/bachelorette/bachelorette (3).png" alt="Bachelorette Photo 2">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Photo 2</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/bachelorette/bachelorette (4).png" alt="Bachelorette Photo 3">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Photo 3</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/bachelorette/bachelorette (5).png" alt="Bachelorette Photo 4">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Photo 4</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/bachelorette/bachelorette (1).png" alt="Bachelorette Photo 5">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Photo 5</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media Posts -->
+    <section class="portfolio-section">
+      <h3>Student Union Social Media Posts</h3>
+      <div class="grid">
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <video controls>
+              <source src="../portfolio/posts/posts (1).mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Post Video</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/posts/posts (1).png" alt="Post Photo 1">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Post Photo 1</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/posts/posts (2).png" alt="Post Photo 2">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Post Photo 2</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prom Stationery -->
+    <section class="portfolio-section">
+      <h3>Prom Stationery</h3>
+      <div class="grid">
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/prom/prom (2).png" alt="Prom Frame 1">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Prom 1</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/prom/prom (1).png" alt="Prom Frame 2">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Prom 2</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/prom/prom (3).png" alt="Prom Frame 3">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Prom 3</h3>
+          </div>
+        </div>
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <img src="../portfolio/prom/prom (4).png" alt="Prom Frame 4">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Prom 4</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summer Internship Video -->
+    <section class="portfolio-section">
+      <h3>Summer Internship Video</h3>
+      <div class="grid">
+        <div class="project" onclick="openModal(this)">
+          <div class="project-image">
+            <video controls>
+              <source src="https://drive.google.com/file/d/1KZwpiqNrmve65J176bCt3_R30AQPjgrU/view?usp=sharing" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Summer Internship Video</h3>
+            <p>A showcase of my summer internship experience</p>
+          </div>
+        </div> 
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2>Skills</h2>
+      <p>My expertise across design, media, and technical development.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <h3>Graphic Design</h3>
+        <p>Expertise in Canva, Figma, branding, and visual storytelling.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <h3>UI/UX Design</h3>
+        <p>Wireframes, prototypes, and user-centered design for web and mobile apps.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎥</div>
+        <h3>Video Production</h3>
+        <p>Editing, motion graphics, and social media content creation.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🛠️</div>
+        <h3>Front-End Development</h3>
+        <p>HTML, CSS, JavaScript, and responsive design for interactive experiences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contact Me</h2>
+      <p>Let's collaborate on your next project or just say hello!</p>
+    </div>
+    <div class="contact-content">
+      <p>Email me at <a href="martagfmartins@gmail.com">martagfmartins@gmail.com</a></p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/marta-martins-419aa1207?trk" class="contact-link" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div id="modalContent"></div>
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    img.onerror = function() {
+
+      this.src = 'https://via.placeholder.com/400x300/667eea/ffffff?text=Image+Not+Found';
+      this.alt = 'Image not available';
+    };
+  });
+  
+
+  const videos = document.querySelectorAll('video');
+  videos.forEach(video => {
+    video.onerror = function() {
+
+      const parent = this.parentElement;
+      const img = document.createElement('img');
+      img.src = 'https://via.placeholder.com/400x300/667eea/ffffff?text=Video+Not+Found';
+      img.alt = 'Video not available';
+      parent.replaceChild(img, this);
+    };
+  });
+
+  const projectVideos = document.querySelectorAll('.project video');
+  projectVideos.forEach(video => {
+    video.addEventListener('click', function(event) {
+      event.stopPropagation();
+    });
+  });
+
+
+  initializeMainCarousels();
+
+  const carouselButtons = document.querySelectorAll('.project .carousel-btn');
+  carouselButtons.forEach(button => {
+    button.addEventListener('click', function(event) {
+      event.stopPropagation(); 
+
+      const direction = this.classList.contains('prev') ? -1 : 1;
+      navigateCarouselInProject(this, direction);
+    });
+  });
+});
+
+
+function initializeMainCarousels() {
+  const carousels = document.querySelectorAll('.project .carousel');
+  
+  carousels.forEach((carousel, carouselIndex) => {
+    const track = carousel.querySelector('.carousel-track');
+    
+    carousel.setAttribute('data-current-index', '0');
+    
+    track.style.transform = 'translateX(0%)';
+  });
+}
+
+function navigateCarouselInProject(button, direction) {
+  const carousel = button.closest('.carousel');
+  const track = carousel.querySelector('.carousel-track');
+  const images = track.querySelectorAll('img');
+  
+ 
+  let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0');
+  
+  let newIndex = currentIndex + direction;
+  if (newIndex < 0) newIndex = images.length - 1;
+  if (newIndex >= images.length) newIndex = 0;
+  
+  track.style.transform = `translateX(-${newIndex * 100}%)`;
+
+  carousel.setAttribute('data-current-index', newIndex.toString());
+}
+
+let currentCarouselIndex = 0;
+
+function openModal(element) {
+  const modal = document.getElementById("imageModal");
+  const modalContent = document.getElementById("modalContent");
+  
+  modalContent.innerHTML = '';
+  
+  const img = element.querySelector('img');
+  const video = element.querySelector('video');
+  const carousel = element.querySelector('.carousel');
+  
+  if (carousel) {
+
+    const carouselModal = document.createElement('div');
+    carouselModal.className = 'carousel-modal';
+    
+    const carouselTrack = document.createElement('div');
+    carouselTrack.className = 'carousel-track';
+    
+    const originalImages = carousel.querySelectorAll('img');
+    originalImages.forEach((img, index) => {
+      const carouselImg = document.createElement('img');
+      carouselImg.src = img.src;
+      carouselImg.alt = img.alt;
+      carouselTrack.appendChild(carouselImg);
+    });
+    
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel-btn prev';
+    prevBtn.innerHTML = '&#10094;';
+    prevBtn.onclick = () => navigateCarousel(-1, carouselTrack);
+    
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel-btn next';
+    nextBtn.innerHTML = '&#10095;';
+    nextBtn.onclick = () => navigateCarousel(1, carouselTrack);
+    
+
+    const indicators = document.createElement('div');
+    indicators.className = 'carousel-indicators';
+    
+    originalImages.forEach((_, index) => {
+      const indicator = document.createElement('div');
+      indicator.className = `carousel-indicator ${index === 0 ? 'active' : ''}`;
+      indicator.onclick = () => {
+        currentCarouselIndex = index;
+        carouselTrack.style.transform = `translateX(-${currentCarouselIndex * 100}%)`;
+        updateIndicators(indicators, currentCarouselIndex);
+      };
+      indicators.appendChild(indicator);
+    });
+    
+    carouselModal.appendChild(carouselTrack);
+    carouselModal.appendChild(prevBtn);
+    carouselModal.appendChild(nextBtn);
+    carouselModal.appendChild(indicators);
+    modalContent.appendChild(carouselModal);
+    
+    currentCarouselIndex = 0;
+    carouselTrack.style.transform = 'translateX(0%)';
+    
+  } else if (img) {
+    const modalImg = document.createElement('img');
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    modalImg.className = 'modal-content';
+    modalContent.appendChild(modalImg);
+    
+  } else if (video) {
+    const modalVideo = document.createElement('video');
+    modalVideo.src = video.querySelector('source').src;
+    modalVideo.controls = true;
+    modalVideo.autoplay = true;
+    modalVideo.className = 'modal-video';
+    modalContent.appendChild(modalVideo);
+  }
+  
+  modal.style.display = "block";
+}
+
+function navigateCarousel(direction, carouselTrack) {
+  const images = carouselTrack.querySelectorAll('img');
+  currentCarouselIndex += direction;
+  
+  if (currentCarouselIndex < 0) currentCarouselIndex = images.length - 1;
+  if (currentCarouselIndex >= images.length) currentCarouselIndex = 0;
+  
+  carouselTrack.style.transform = `translateX(-${currentCarouselIndex * 100}%)`;
+  
+  const indicators = document.querySelector('.carousel-indicators');
+  if (indicators) {
+    updateIndicators(indicators, currentCarouselIndex);
+  }
+}
+
+function updateIndicators(indicators, activeIndex) {
+  const indicatorElements = indicators.querySelectorAll('.carousel-indicator');
+  indicatorElements.forEach((indicator, index) => {
+    indicator.classList.toggle('active', index === activeIndex);
+  });
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+  const videos = document.querySelectorAll('.modal-video');
+  videos.forEach(video => {
+    video.pause();
+    video.currentTime = 0;
+  });
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById("imageModal");
+  if (event.target == modal) {
+    closeModal();
+  }
+}
+</script>
+
+</body>
+</html>
